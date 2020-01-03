@@ -5,7 +5,7 @@ export default class TabBarExample extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'redTab',
+      selectedTab: 'blueTab',
       hidden: false,
       fullScreen: false,
     };
@@ -23,7 +23,6 @@ export default class TabBarExample extends React.Component {
             });
           }}
         >
-          Click to show/hide tab-bar
         </a>
         <a style={{ display: 'block', marginBottom: 600, color: '#108ee9' }}
           onClick={(e) => {
@@ -33,7 +32,6 @@ export default class TabBarExample extends React.Component {
             });
           }}
         >
-          Click to switch fullscreen
         </a>
       </div>
     );
@@ -44,27 +42,16 @@ export default class TabBarExample extends React.Component {
       <div style={ { position: 'fixed', height: '100%', width: '100%', top: 0 }}>
         <TabBar
           unselectedTintColor="#949494"
-          tintColor="#33A3F4"
+          tintColor="#21b97a"
           barTintColor="white"
           hidden={this.state.hidden}
         >
           <TabBar.Item
-            title="Life"
-            key="Life"
-            icon={<div style={{
-              width: '22px',
-              height: '22px',
-              background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
-            />
-            }
-            selectedIcon={<div style={{
-              width: '22px',
-              height: '22px',
-              background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
-            />
-            }
+            title="首页"
+            key="home"
+            icon={<i className="iconfont icon-ind"></i>}
+            selectedIcon={<i className="iconfont icon-ind"></i>}
             selected={this.state.selectedTab === 'blueTab'}
-            badge={1}
             onPress={() => {
               this.setState({
                 selectedTab: 'blueTab',
@@ -72,26 +59,13 @@ export default class TabBarExample extends React.Component {
             }}
             data-seed="logId"
           >
-            {this.renderContent('Life')}
+            {this.props.children}
           </TabBar.Item>
           <TabBar.Item
-            icon={
-              <div style={{
-                width: '22px',
-                height: '22px',
-                background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat' }}
-              />
-            }
-            selectedIcon={
-              <div style={{
-                width: '22px',
-                height: '22px',
-                background: 'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat' }}
-              />
-            }
-            title="Koubei"
-            key="Koubei"
-            badge={'new'}
+            icon={<i className="iconfont icon-findHouse"></i>}
+            selectedIcon={<i className="iconfont icon-findHouse"></i>}
+            title="找房"
+            key="list"
             selected={this.state.selectedTab === 'redTab'}
             onPress={() => {
               this.setState({
@@ -100,26 +74,13 @@ export default class TabBarExample extends React.Component {
             }}
             data-seed="logId1"
           >
-            {this.renderContent('Koubei')}
+            {this.props.children}
           </TabBar.Item>
           <TabBar.Item
-            icon={
-              <div style={{
-                width: '22px',
-                height: '22px',
-                background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat' }}
-              />
-            }
-            selectedIcon={
-              <div style={{
-                width: '22px',
-                height: '22px',
-                background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat' }}
-              />
-            }
-            title="Friend"
-            key="Friend"
-            dot
+            icon={<i className="iconfont icon-infom"></i>}
+            selectedIcon={<i className="iconfont icon-infom"></i>}
+            title="资讯"
+            key="info"
             selected={this.state.selectedTab === 'greenTab'}
             onPress={() => {
               this.setState({
@@ -127,11 +88,11 @@ export default class TabBarExample extends React.Component {
               });
             }}
           >
-            {this.renderContent('Friend')}
+            {this.props.children}
           </TabBar.Item>
           <TabBar.Item
-            icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
-            selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
+            icon={<i className="iconfont icon-my"></i>}
+            selectedIcon={<i className="iconfont icon-my"></i>}
             title="My"
             key="my"
             selected={this.state.selectedTab === 'yellowTab'}
@@ -141,7 +102,7 @@ export default class TabBarExample extends React.Component {
               });
             }}
           >
-            {this.renderContent('My')}
+            {this.props.children}
           </TabBar.Item>
         </TabBar>
       </div>
