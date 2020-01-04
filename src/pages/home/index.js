@@ -76,6 +76,14 @@ export default class index extends Component {
             </div>)
             }
           </div>
+          {/* 租房小组部分 */}
+          <div className="hk_team">
+            <div className="hk-team-title">
+              <h3>租房小组</h3>
+              <p>更多</p>
+            </div>
+            
+          </div>
         </div>
       </Fragment>
     )
