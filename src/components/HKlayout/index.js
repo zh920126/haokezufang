@@ -1,5 +1,5 @@
 import { TabBar } from 'antd-mobile';
-import React, { Component } from 'react'
+import React from 'react'
 import {withRouter} from 'react-router-dom'
 
 class HKLayout extends React.Component {

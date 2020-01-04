@@ -1,0 +1,41 @@
+.hk_home {
+  height: 100vh;
+  background-color: #fff;
+  position: relative;
+
+  .hk_swiper {
+    .am-wingblank,.am-wingblank-lg{
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  .hk_navbar {
+    display: flex;
+    background-color: white;
+    padding: 10px;
+
+    .hk_nav_item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      text-align: center;
+
+      .item_wrrapper {
+        img {
+          width: 48px;
+          margin: auto;
+        }
+
+        p {
+          margin: 0;
+          margin-top: 7px;
+          font-size: 13/360*100vw;
+        }
+
+      }
+    }
+
+  }
+}
