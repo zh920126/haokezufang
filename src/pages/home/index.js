@@ -1,6 +1,6 @@
 import React, { Component,Fragment } from 'react'
-// 引入axios
-import axios from 'axios'
+// 引入封装的axios
+import Axios from '../../utils/request'
 // 引入封装的baseURL
 import baseURL from '../../utils/urls'
 // 引入轮播图组件
@@ -12,10 +12,10 @@ export default class index extends Component {
     imgHeight:176
   }
   componentDidMount(){
-    axios.get(baseURL+"/home/swiper").then(res=>{
+    Axios.get("/home/swiper").then(res=>{
       console.log(res);
       this.setState({
-        swiper:res.data.body
+        swiper:res.body
       })
     })
   }
