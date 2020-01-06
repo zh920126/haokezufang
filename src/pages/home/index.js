@@ -22,13 +22,22 @@ export default class index extends Component {
       {id:2,imgSrc:Nav2,title:"合租"},
       {id:3,imgSrc:Nav3,title:"地图找房"},
       {id:4,imgSrc:Nav4,title:"去出租"},
-    ]
+    ],
+    news:[]
   }
   componentDidMount(){
+    // 轮播图的数据
     Axios.get("/home/swiper").then(res=>{
       console.log(res);
       this.setState({
         swiper:res.body
+      })
+    })
+    // 最新资讯的数据
+    Axios.get("/home/news").then(res=>{
+      console.log(res);
+      this.setState({
+        news:res.body
       })
     })
   }
@@ -83,6 +92,30 @@ export default class index extends Component {
               <p>更多</p>
             </div>
             
+          </div>
+          {/* 最新资讯部分 */}
+          <div className="hk_news">
+            <div className="hk_news_title">
+              <h3>最新资讯</h3>
+            </div>
+            {
+              this.state.news.map(v=>
+                <div className="hk_news_item" key={v.id}>
+                  <div className="hk_news_img">
+                    <img src={baseURL+v.imgSrc}></img>
+                  </div>
+                  <div className="hk_news_info">
+                    <div className="hk_news_item_top">
+                      <span>{v.title}</span>
+                    </div>
+                    <div className="hk_news_item_bottom">
+                      <div className="hk_news_item_from">{v.from}</div>
+                      <div className="hk_news_item_date">{v.date}</div>
+                    </div>
+                  </div>
+                </div>
+                )
+            }
           </div>
         </div>
       </Fragment>

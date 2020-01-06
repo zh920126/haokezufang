@@ -1,0 +1,11 @@
+/* 样式初始化文件 */
+h1,h2,h3,h4,h5,h6,div,p,ul,li,ol,dl,dd,dt,input,a,img{
+  padding: 0;
+  margin: 0;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}

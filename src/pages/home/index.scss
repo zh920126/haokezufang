@@ -36,14 +36,40 @@
 
       }
     }
-    .hk_team{
-      width: 100%;
-      padding: 0px 10px;
-      h3{
-        margin: 0;
+  }
+}
+.hk_team{
+  background-color: #ccc;
+}
+.hk_news{
+  padding:10px 10px 0px;
+  .hk_news_item{
+    padding: 15px 0px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    .hk_news_img{
+      width: 120px;
+      height: 90px;
+      img{
+        width: 100%;
       }
-      p{
-        margin: 0;
+    }
+    .hk_news_info{
+      flex: 1;
+      padding: 0px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      .hk_news_item_top{
+        font-weight: 600;
+      }
+      .hk_news_item_bottom{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        color: #ccc;
       }
     }
   }
