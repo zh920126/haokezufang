@@ -1,6 +1,6 @@
 import React, { Component,Fragment } from 'react'
 // 1.引入路由组件
-import {HashRouter as Router,Route,Link,Switch} from 'react-router-dom'
+import {HashRouter as Router,Route} from 'react-router-dom'
 // 2.引入路由模块
 import Home from './pages/home'
 import Info from './pages/info'

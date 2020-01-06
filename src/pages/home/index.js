@@ -23,7 +23,8 @@ export default class index extends Component {
       {id:3,imgSrc:Nav3,title:"地图找房"},
       {id:4,imgSrc:Nav4,title:"去出租"},
     ],
-    news:[]
+    news:[],
+    homeGroup:[]
   }
   componentDidMount(){
     // 轮播图的数据
@@ -38,6 +39,13 @@ export default class index extends Component {
       console.log(res);
       this.setState({
         news:res.body
+      })
+    })
+    // 租房小组数据
+    Axios.get("/home/groups").then(res=>{
+      console.log(res);
+      this.setState({
+        homeGroup:res.body
       })
     })
   }
@@ -86,12 +94,26 @@ export default class index extends Component {
             }
           </div>
           {/* 租房小组部分 */}
-          <div className="hk_team">
-            <div className="hk-team-title">
+          <div className="hk_home_group">
+            <div className="hk_home_title">
               <h3>租房小组</h3>
               <p>更多</p>
             </div>
-            
+            <div className="hk_home_content">
+              {
+                this.state.homeGroup.map(v=>
+                  <div className="hk_home_item" key={v.id}>
+                    <div className="hk_home_item_left">
+                      <span className="hk_home_left_title">{v.title}</span>
+                      <span className="hk_home_left_desc">{v.desc}</span>
+                    </div>
+                    <div className="hk_item_right">
+                      <img src={baseURL+v.imgSrc}></img>
+                    </div>
+                  </div>
+                  )
+              }
+            </div>
           </div>
           {/* 最新资讯部分 */}
           <div className="hk_news">

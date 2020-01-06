@@ -38,11 +38,9 @@
     }
   }
 }
-.hk_team{
-  background-color: #ccc;
-}
 .hk_news{
   padding:10px 10px 0px;
+  background-color: #fff;
   .hk_news_item{
     padding: 15px 0px;
     border-bottom: 1px solid #ccc;
@@ -70,6 +68,64 @@
         justify-content: space-between;
         font-size: 12px;
         color: #ccc;
+      }
+    }
+  }
+}
+.hk_home_group{
+  .hk_home_title{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f6f5f6;
+    p{
+      color: #ccc;
+    }
+  }
+  .hk_home_content{
+    display: flex;
+    flex-wrap: wrap;
+    .hk_home_item{
+      width: 50%;
+      background-color: #fff;
+      display: flex;
+      justify-content: space-around;
+      box-sizing: border-box;
+      padding: 10px 0px;
+              &:nth-child(1){
+                border: 10px solid #f6f5f6;
+              }
+              &:nth-child(2){
+                border-right: 10px solid #f6f6f6;
+                border-top: 10px solid #f6f6f6;
+                border-bottom: 10px solid #f6f6f6;
+              }
+              &:nth-child(3){
+                border-left: 10px solid #f6f6f6;
+                border-right: 10px solid #f6f6f6;
+                border-bottom: 10px solid #f6f6f6;
+              }
+              &:nth-child(4){
+                border-right: 10px solid #f6f6f6;
+                border-bottom: 10px solid #f6f6f6;
+              }
+      .hk_home_item_left{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        .hk_home_left_title{
+          font-weight: 600;
+        }
+        .hk_home_left_desc{
+          font-size: 13px;
+          color: #ccc;
+        }
+      }
+      .hk_item_right{
+        img{
+          width: 55px;
+        }
       }
     }
   }
