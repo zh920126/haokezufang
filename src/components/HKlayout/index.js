@@ -27,7 +27,7 @@ class HKLayout extends React.Component {
             }}
             data-seed="logId"
           >
-            {this.props.children}
+            {this.props.match.path==='/'&&this.props.children}
           </TabBar.Item>
           <TabBar.Item
             icon={<i className="iconfont icon-findHouse"></i>}
@@ -40,7 +40,7 @@ class HKLayout extends React.Component {
             }}
             data-seed="logId1"
           >
-            {this.props.children}
+            {this.props.match.path==='/list'&&this.props.children}
           </TabBar.Item>
           <TabBar.Item
             icon={<i className="iconfont icon-infom"></i>}
@@ -52,7 +52,7 @@ class HKLayout extends React.Component {
               this.props.history.push('/info')
             }}
           >
-            {this.props.children}
+            {this.props.match.path==='/info'&&this.props.children}
           </TabBar.Item>
           <TabBar.Item
             icon={<i className="iconfont icon-my"></i>}
@@ -64,7 +64,7 @@ class HKLayout extends React.Component {
               this.props.history.push('/profile')
             }}
           >
-            {this.props.children}
+            {this.props.match.path==='/profile'&&this.props.children}
           </TabBar.Item>
         </TabBar>
       </div>
